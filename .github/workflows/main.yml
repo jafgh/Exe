@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requests  # تثبيت المتطلبات من requirements.txt
+          pip install -r requirements.txt  # تثبيت المتطلبات من requirements.txt
 
       - name: Build executable with PyInstaller
         run: |

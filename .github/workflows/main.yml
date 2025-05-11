@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-exe:
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
       - name: Checkout code
@@ -25,13 +25,10 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          # إذا استخدمت build.spec استخدم:
-          pyinstaller build.spec
-          # أما بدون spec:
-          # pyinstaller --onefile --windowed activate_server.py
+          pyinstaller --onefile --windowed activate_server.py
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: activate_server-exe
           path: dist/activate_server.exe
